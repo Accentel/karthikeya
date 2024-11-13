@@ -97,10 +97,7 @@ include("header.php");?>
 					                                            	<th>ID</th>
 
 					                                                <th> Name </th>
-					                                                <th> User Name </th>
-					                                               
-					                                               
-					                                                
+					                                                <th> User Name </th> 
 					                                                <th> Action </th>
 					                                            </tr>
 					                                        </thead>
@@ -137,11 +134,7 @@ $res=mysqli_fetch_array($query);
 																	</td>
 																	<td><?php echo $res['empname'] ?></td>
 																	<td class="left"><?php echo $name;?></td>
-																	
-																	
-																	
-																	
-																	
+	
 																	<td>
 																		<a href="edit_user.php?id=<?php echo $name; ?>" class="btn btn-primary btn-xs">
 																			<i class="fa fa-pencil"></i>

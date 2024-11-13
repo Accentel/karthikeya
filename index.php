@@ -1,6 +1,5 @@
+<!-- Developed by Accentel -->
 <?php include('login_process.php'); ?>
-
-
 <!DOCTYPE html>
 <html>
 

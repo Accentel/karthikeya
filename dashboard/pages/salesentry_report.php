@@ -10,20 +10,22 @@ session_start();
 function report()
 {
    		if (document.form.fdate.value == "") {
-				alert("Please enter the Date.");
+				alert("Please enter From Date.");
 				document.fdate.focus();
 				return (false);
 				}
-	//if (document.form.tdate.value == "") {
-				//alert("Please enter To Date.");
-				//document.tdate.focus();
-				//return (false);
-				//}
+		if (document.form.tdate.value == "") {
+				alert("Please enter To Date.");
+				document.tdate.focus();
+				return (false);
+				}
       var s_date=document.form.fdate.value;
-	 // var e_date=document.form.tdate.value;
-	   //var prdcode=document.form.prdcode.value;
-	  //window.open('PDF_SalesEntry.jsp?s_date='+s_date+'&e_date='+e_date+'&prdcode='+prdcode,'mywindow1','width=1020,height=600,toolbar=no,menubar=no,scrollbars=yes')
-    window.open('Ch_SalesEntry.php?s_date='+s_date,'abc','width=1020,height=600,toolbar=no,menubar=no,scrollbars=yes')
+	 var e_date=document.form.tdate.value;
+	  // var prdcode=document.form.prdcode.value;
+	//   window.open('PDF_SalesEntry.jsp?s_date='+s_date+'&e_date='+e_date+'&prdcode='+prdcode,'mywindow1','width=1020,height=600,toolbar=no,menubar=no,scrollbars=yes')
+    window.open('Ch_SalesEntry.php?s_date='+s_date+'&e_date='+e_date,'mywindow1','width=1020,height=600,toolbar=no,menubar=no,scrollbars=yes')
+	// window.open('PDF_SalesTypesMnth.php?s_date='+s_date+'&e_date='+e_date,'mywindow1','width=1020,height=700,toolbar=no,menubar=no,scrollbars=yes')
+
 	
 }
 </script>	
@@ -74,9 +76,14 @@ function report()
 	                                    <div class="col-md-6 col-sm-6">
 	                                        <!-- text input -->
 	                                       
-											 <div class="form-group">
-	                                            <label>Date</label>
+											<div class="form-group">
+	                                            <label>From Date</label>
 	                                          <input type="date" class="form-control" name="fdate" value="<?php echo $today = date("Y-m-d"); ?>" id="fdate" required="required" >
+	                                        </div>
+
+											 <div class="form-group">
+	                                            <label>To Date</label>
+	                                          <input type="date" class="form-control" name="tdate" value="<?php echo $today = date("Y-m-d"); ?>" id="tdate" required="required" >
 	                                        </div>
 										
 												<div class="form-actions">

@@ -92,21 +92,23 @@ $PHONE1=$res['phoneno'];
 <div align="center">
   <?php
 $sdate=$_REQUEST['s_date'];
-//$edate=$_REQUEST['e_date'];
+$edate=$_REQUEST['e_date'];
 
 $s_date=date('Y-m-d',strtotime($_REQUEST['s_date']));
-//$e_date=date('Y-m-d',strtotime($_REQUEST['e_date']));
+$e_date=date('Y-m-d',strtotime($_REQUEST['e_date']));
 
 ?>
+
   
   <table width="75%" cellpadding="0" cellspacing="0" border="1" style="font-family: arial;font-size: 12px">
-    <tr><td colspan=5><div align="center"><strong>Day Sales Entry Report</strong></div></td></tr>
+    <tr><td colspan=><div align="center"><strong>Day Sales Entry Report</strong></div></td></tr>
   
 
-  <tr><td colspan=2><div align="right"><strong> Date</strong>:</div></td><td colspan=3><div align="left"><?php echo $sdate ?></div></td>
-  
-     
-	   
+  <tr><td colspan=2><div align="right"><strong>From Date</strong>:</div></td><td><div align="left"><?php echo $sdate ?></div></td>
+
+    <td ><div align="right"><strong>To Date:</strong></div></td>
+    <td ><div align="left"><?php echo $edate ?></div></td>
+   
 </tr>
 
 
@@ -116,7 +118,7 @@ $s_date=date('Y-m-d',strtotime($_REQUEST['s_date']));
   <td align="center"><strong>MR No./Customer Name.</strong></td>
   <td align="center"><strong>Date</strong></td>
   <td align="center"><strong>Total</strong></td>
-  </tr>
+</tr>
   
    <?php
 
@@ -124,7 +126,7 @@ $counts=0;
   //$s="select  distinct b.registerno,a.INV_NO,a.CUST_NAME,a.SAL_DATE,a.total,a.mrnum,b.patientname from phr_salent_mast a,patientregister b
  //where a.SAL_DATE='$s_date'  and b.registerno=a.mrnum ";
  
-$s="SELECT * FROM `phr_salent_mast` WHERE `SAL_DATE`='$sdate'"; 
+$s="SELECT * FROM `phr_salent_mast` WHERE SAL_DATE between '$s_date' and '$e_date' "; 
 $qry=mysqli_query($link,$s) or die();
 if($qry){
 $sno=0;

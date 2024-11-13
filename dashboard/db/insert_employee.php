@@ -2,7 +2,6 @@
 <head>
 	<title>Add Data</title>
 </head>
-
 <body>
 <?php
 //including the database connection file
